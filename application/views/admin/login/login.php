@@ -1,89 +1,37 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Administração</title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css')?>">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/font-awesome/css/font-awesome.min.css')?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <style>
-        .wrapper {    
-            margin-top: 80px;
-            margin-bottom: 20px;
-        }
+        <title>Signin</title>
 
-        .form-signin {
-        max-width: 420px;
-        padding: 30px 38px 66px;
-        margin: 0 auto;
-        background-color: #eee;
-        border: 3px dotted rgba(0,0,0,0.1);  
-        }
+        <!-- Bootstrap core CSS -->
+        <link href="<?= base_url('assets/bootstrap/dist/css/bootstrap.min.css')?>" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="<?= base_url('assets/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
 
-        .form-signin-heading {
-        text-align:center;
-        margin-bottom: 30px;
-        }
-
-        .form-control {
-        position: relative;
-        font-size: 16px;
-        height: auto;
-        padding: 10px;
-        }
-
-        input[type="text"] {
-        margin-bottom: 0px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        }
-
-        input[type="password"] {
-        margin-bottom: 20px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        }
-
-        .colorgraph {
-        height: 7px;
-        border-top: 0;
-        background: #c4e17f;
-        border-radius: 5px;
-        background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        }
-    </style>
+        <!-- Custom styles for this template -->
+        <link href="<?= base_url('assets/css/signin.css')?>" rel="stylesheet">
     </head>
 
-    <body>
-        <div class = "container">
-            <div class="wrapper">
-                <form class="form-signin">       
-                    <h3 class="form-signin-heading">Login Alffainox</h3>
-                    <hr class="colorgraph"><br>
-                    
-                    <input type="text" class="form-control" name="login" id="login" placeholder="Login" autofocus />
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Senha" />     		  
-                    
-                    <button type="button" class="btn btn-lg btn-primary btn-block" onclick="doLogin()">Login</button>	
-                </form>			
-            </div>
+    <body class="text-center">
+        <form class="form-signin">
+            <i class="fas fa-cogs fa-7x"></i>
+            <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
 
-            <div class="alert alert-danger" id="error" style="display: none" role="alert"></div>
-        </div>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Username" required autofocus>
+            
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            
+            <button class="btn btn-lg btn-primary btn-block" type="button" onClick="doLogin()">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">Victor Carvalho - <?= date('Y')?> </p>
+        </form>
 
-        <!-- jQuery 3 -->
-        <script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js')?>"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')?>"></script>
-
+        <script src="<?= base_url('assets/js/jquery.min.js')?>"></script>
+        
         <script>
             $(document).keypress(function(e) {
                 if(e.which == 13) {
@@ -93,8 +41,8 @@
 
             function doLogin(){
                 var data = {
-                    login: $("#login").val(),
-                    senha: $("#password").val()
+                    username: $("#username").val(),
+                    password: $("#password").val()
                 };
 
                 $.ajax({

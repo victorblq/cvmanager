@@ -1,217 +1,69 @@
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+/*
+ * HR ICONS CONFIGURATION
+ */
+hr.icon-light,
+hr.icon-dark {
+  max-width: 15rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 0.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@font-face 
-{
-    font-family: 'The name of the Font Family Here';
-    src: URL('font.ttf') format('ttf');
+hr.icon-light:after,
+hr.icon-dark:after {
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
 }
 
-h1, h2, h3, h4, p, span, a, button, input, select
-{
-    font-family: Raleway;
+hr.icon-light {
+  border-color: #fff;
 }
 
-.carrousel-overlay
-{
-    min-height: 100px; 
-    position:absolute; 
-    top: 320px; 
-    z-index: 99; 
-    width: 100%; 
-    color: white;
-    background-color: rgba(1, 48, 77, 0.69);
-    padding: 15px 0px;
+hr.icon-light:after {
+  color: #fff;
+  background-color: #18BC9C;
 }
 
-.destaques-overlay
-{
-    min-height: 100px; 
-    top: 220px; 
-    z-index: 99; 
-    background-color: rgba(1, 48, 77, 0.69);
-    border-bottom: 5px solid rgba(242, 95, 33, 0.69);
-    position: relative;
-    color: white;
-    width: 100%;
-    top: -100px;
+hr.icon-dark {
+  border-color: #2C3E50;
 }
 
-.busca-overlay
-{
-    min-height: 100px; 
-    top: 220px; 
-    z-index: 99; 
-    background-color: rgba(242, 95, 33, 0.69);
-    position: relative;
-    color: white;
-    width: 100%;
-    top: -100px;
+hr.icon-dark:after {
+  color: #2C3E50;
+  background-color: white;
 }
 
-.resultado-busca-detalhes
-{
-    padding: 20px 0px 10px 0px;
-    background-color: #E8E7E7;
-    min-height: 100px; 
-    top: 220px; 
-    z-index: 99; 
-    position: relative;
-    width: 100%;
-    top: -100px;
+/*
+ * HR ICONS
+ */
+hr.code:after{
+    content: '\f121';
 }
 
-.subtitle
-{
-    font-size: xx-large;
+hr.project-diagram:after{
+    content: '\f542';
 }
 
-.text-orange
-{
-    color: #F25F21;
-}
-
-.text-blue
-{
-    color: #01304D;
-}
-
-.text-bold
-{
-    font-weight: bold;
-}
-
-.text-upper
-{
-    text-transform: uppercase;
-}
-
-.g-button
-{
-    display: inline-block;
-    padding: 2px 10px;
-    margin-bottom: 0;
-    font-size: 14px;
+hr.question-circle:after{
+    content: '\f059';
     font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    color: #fff;
-    background-color: #F25F21;
 }
+/*
+ * END HR ICONS
+ */
 
-.g-button:hover, .g-button-dark:hover
-{
-    color: white;
-    text-decoration: none;
-}
-
-.g-button-dark
-{
-    display: inline-block;
-    padding: 2px 10px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    color: #fff;
-    background-color: #BD4917;
-}
-
-.g-input
-{
-    height: 25px;
-    border: none;
-    margin: 5px 0px;
-    border-radius: 0px;
-    background-color: #EAEAEA;
-}
-
-.g-select
-{
-    width: 100%;
-    border: none;
-    height: 25px;
-    margin: 5px 0px;
-    background-color: #EAEAEA;
-    color: #222;
-}
-
-.g-select-orange
-{
-    background-color: #f25f21!important;
-    color: white!important;
-}
-
-input[type="text"].g-input::-webkit-input-placeholder 
-{
-    padding: 0px 10px;
-    color: #222;
-}
-
-input[type="text"].g-input.grayPlaceholder::-webkit-input-placeholder 
-{
-    padding: 0px 10px;
-    color: #b7b5b5;
-}
-
-.breadcrumb
-{
-    box-shadow: 0px 3px 5px #ccc inset; 
-    background-color: #eee;
-}
-
-.breadcrumb a
-{
-    color: #333;
-}
-
-.contato-imovel-card
-{
-    background-color: #F25F21;
-    padding-bottom: 35px;
-}
-
-.contato-imovel-card span
-{
-    color: white;
-}
-
-.busca-field-label
-{
-    margin: 5px 0px 0px 0px;
-    font-weight: normal;
-}
-
-.busca-field
-{
-    margin: 0px;
+.profile-image{
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
 }

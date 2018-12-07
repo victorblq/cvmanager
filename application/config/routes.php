@@ -59,13 +59,7 @@ $route['admin'] = "adminController";
 $route['login'] = "adminController/login";
 $route['logout'] = "adminController/logout";
 
-//Personalizar Routes
-$route['admin/personalizar'] = "adminController/personalizar";
-$route['admin/personalizar/update'] = "adminController/updateSiteInfo";
-
 //Usuarios Routes
-$route['admin/usuarios/listar'] = "usuarioController/listar";
-$route['admin/usuarios/cadastrar'] = "usuarioController/cadastrar";
-$route['admin/usuarios/insert'] = "usuarioController/insert";
-$route['admin/usuarios/desativar/(:num)'] = "usuarioController/desativar/$1";
-$route['admin/usuarios/ativar/(:num)'] = "usuarioController/ativar/$1";
+$route['admin/users/list'] = "userController/list";
+$route['admin/users/add'] = "userController/add";
+$route['admin/users/insert'] = "userController/insert";
