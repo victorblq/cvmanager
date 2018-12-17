@@ -59,6 +59,9 @@ $route['admin'] = "adminController";
 $route['login'] = "adminController/login";
 $route['logout'] = "adminController/logout";
 
+//Personal Info
+$route['admin/personalinfo'] = "personalInfoController";
+
 //Usuarios Routes
 $route['admin/users/list'] = "userController/list";
 $route['admin/users/add'] = "userController/add";

@@ -54,7 +54,7 @@
                         <!-- User Account Menu -->
                         <li>
                             <!-- Menu Toggle Button -->
-                            <a href="logout" title="Sair">
+                            <a href="logout" title="<?= $this->lang->line('exit'); ?>">
                                 <!-- The user image in the navbar-->
                                 <!-- <img src="#" class="user-image" alt="User Image"> -->
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->

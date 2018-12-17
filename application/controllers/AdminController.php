@@ -20,7 +20,7 @@ class AdminController extends CI_Controller {
         $data = array(
             "titulo" => "Dashboard",
             "userdata" => $this->session->userdata,
-            "active_menu" => "",
+            "active_menu" => "dashboard",
             "active_sub_menu" => ""
         );
 

@@ -37,7 +37,7 @@
     <section class="portfolio" id="projects">
         <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0">Projects</h2>
-            <hr class="icon-dark project-diagram mb-5">
+            <hr class="icon-dark wrench mb-5">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">

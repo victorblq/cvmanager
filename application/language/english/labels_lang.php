@@ -1,0 +1,22 @@
+<?php
+$lang['exit'] = "Exit";
+$lang['personal_info'] = "Personal Info";
+$lang['graduation'] = "Graduation";
+$lang['professional_experience'] = "Professional experience";
+$lang['qualifications'] = "Qualifications";
+$lang['projects'] = "Projects";
+$lang['extra_activities'] = "Extra activities";
+$lang['list'] = "List";
+$lang['add'] = "Add";
+$lang['image'] = "Image";
+$lang['title'] = "Title";
+$lang['sub_title'] = "Sub title";
+$lang['show_this_section'] = "Show this section";
+$lang['basic_info'] = "Basic info";
+$lang['about'] = "About";
+$lang['contact'] = "Contact";
+$lang['phone'] = "Phone";
+$lang['email'] = "Email";
+$lang['references'] = "References";
+$lang['restore'] = "Restore";
+$lang['save'] = "Save";

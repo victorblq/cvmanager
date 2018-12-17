@@ -59,8 +59,8 @@ hr.code:after{
     content: '\f121';
 }
 
-hr.project-diagram:after{
-    content: '\f542';
+hr.wrench:after{
+    content: '\f0ad';
 }
 
 hr.question-circle:after{
