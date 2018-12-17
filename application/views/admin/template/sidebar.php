@@ -1,0 +1,43 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+                <li class="">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> 
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active menu-open treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> 
+                        <span>Dashboard</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+
+                    <ul class="treeview-menu">
+                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    </ul>
+                </li>
+            </li>
+        </ul>
+    </section>
+<!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <?= $titulo ?>
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
