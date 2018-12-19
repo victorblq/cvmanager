@@ -1,0 +1,18 @@
+#SETTINGS
+app:
+  external-url: http://localhost:8080
+
+#SPRING
+spring:
+  application:
+    version: ${spring.application.name}-BETA
+  
+  #JPA
+  jpa:
+    show-sql: false
+
+  #DATA SOURCE
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/${spring.application.name}
+    username: postgres
+    password: postgres

@@ -1,0 +1,35 @@
+spring:
+  application.name: cvmanager
+  profiles:
+    active: @active.profile@
+    
+  #FLYWAY
+  flyway:
+    enabled: true
+    check-location: true
+    schemas: public
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    
+  #JPA
+  jpa:
+    hibernate.ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      hibernate.default_schema: public
+      hibernate.jdbc.lob.non_contextual_creation: true
+
+  #STATIC RESOURCES
+  resources.static-locations: classpath:/static/
+  resources.chain:
+    cache: false
+    strategy.content.enabled: true
+    strategy.content.paths: /**
+
+  thymeleaf:
+    mode: HTML
+    cache: false
+    prefix: classpath:/static/
+    suffix: .html
+
