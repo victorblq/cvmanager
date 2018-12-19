@@ -18,6 +18,11 @@
 
 	<properties>
 		<java.version>10</java.version>
+
+		<node.version>v11.3.0</node.version>
+		<yarn.version>v1.9.4</yarn.version>
+		<ts.work-dir>src/main/ts/cvmanager</ts.work-dir>
+		<node.install-dir>${user.home}/.node-cvmanager</node.install-dir>
 	</properties>
 
 	<profiles>
@@ -29,7 +34,7 @@
 			<properties>
 				<active.profile>development</active.profile>
 				<final-name>${project.artifactId}-${project.version}-DEV</final-name>
-				<frontend.environment>run build-dev</frontend.environment>
+				<frontend.environment>run build-development</frontend.environment>
 			</properties>
 		</profile>
 		<profile>
@@ -57,9 +62,9 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -76,7 +81,7 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -87,11 +92,50 @@
 
 	<build>
 		<plugins>
+			<!-- Spring boot maven plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- Maven front end plugin -->
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<nodeVersion>${node.version}</nodeVersion>
+					<yarnVersion>${yarn.version}</yarnVersion>
+					<workingDirectory>${ts.work-dir}</workingDirectory>
+					<installDirectory>${node.install-dir}</installDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-yarn</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>yarn install</id>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<arguments>install --mutex network</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>ng build</id>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<arguments>${frontend.environment}</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>

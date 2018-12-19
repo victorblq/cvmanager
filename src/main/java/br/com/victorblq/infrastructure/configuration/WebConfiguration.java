@@ -21,10 +21,7 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/META-INF/resources/inventario-web/");
-
-        registry.addResourceHandler("/assets/**")
-                .addResourceLocations("classpath:/META-INF/resources/assets/");
+                .addResourceLocations("classpath:/static/");
     }
 
     /**
