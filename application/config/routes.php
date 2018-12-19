@@ -61,6 +61,7 @@ $route['logout'] = "adminController/logout";
 
 //Personal Info
 $route['admin/personalinfo'] = "personalInfoController";
+$route['admin/update_personalinfo'] = "personalInfoController/update";
 
 //Usuarios Routes
 $route['admin/users/list'] = "userController/list";

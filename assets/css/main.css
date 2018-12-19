@@ -76,3 +76,7 @@ hr.question-circle:after{
     height: 256px;
     border-radius: 50%;
 }
+
+span[data-notify="title"]{
+    display: block;
+}

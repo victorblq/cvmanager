@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css')?>">
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/bower_components/Ionicons/css/ionicons.min.css')?>">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/animate.css')?>">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('assets/adminlte/dist/css/AdminLTE.min.css')?>">
     <!-- AdminLTE Skins. Choose a skin from the css/skins

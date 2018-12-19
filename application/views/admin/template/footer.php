@@ -17,6 +17,10 @@
     <script src="<?= base_url('assets/adminlte/bower_components/jquery-ui/jquery-ui.min.js')?>"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url('assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')?>"></script>
+    <!-- Bootstrap Notify -->
+    <script src="<?= base_url('assets/js/bootstrap-notify.min.js')?>"></script>
+    <!-- main.js -->
+    <script src="<?= base_url('assets/js/main.js')?>"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('assets/adminlte/dist/js/adminlte.min.js')?>"></script>
 </body>
