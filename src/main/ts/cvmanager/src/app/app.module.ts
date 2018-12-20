@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import * as $ from 'jquery';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './cvmanager/app.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './cvmanager/home/home.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

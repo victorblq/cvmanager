@@ -9,10 +9,11 @@ spring:
   
   #JPA
   jpa:
+    hibernate.ddl-auto: update
     show-sql: false
 
   #DATA SOURCE
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/${spring.application.name}
-    username: postgres
-    password: postgres
+    username: cvmanager
+    password: cvmanager
