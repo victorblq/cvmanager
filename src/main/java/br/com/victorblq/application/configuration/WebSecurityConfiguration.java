@@ -4,6 +4,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * 
+ * @author Victor Carvalho
+ *
+ * @version 1.0.0
+ * @since 1.0.0, 12/19/2018
+ */
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
@@ -19,7 +26,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 					.authenticated() 
 				.and() 
 					.formLogin() 
-				        .usernameParameter("login") 
+				        .usernameParameter("email") 
 				        .passwordParameter("password")
 				        .loginPage("/authentication") 
 				        .loginProcessingUrl("/authenticate") 

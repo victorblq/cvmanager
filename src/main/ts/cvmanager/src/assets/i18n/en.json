@@ -1,0 +1,29 @@
+{
+    "title": "Title",
+    "actions": "Actions",
+    "dashboard": "Dashboard",
+    "graduation": "Graduation",
+    "professional-experience": "Professional experience",
+    "qualifications": "Qualifications",
+    "projects": "Projects",
+    "extra-activities": "Extra activities",
+    
+    "personal-info": {
+        "personal-info": "Personal info",
+        "edit-profile": "Edit Profile",
+        "edit-your-info": "Edit your personal information",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "about-me": "About me",
+        "contact": "Contact",
+        "phones": "Phones",
+        "phone-number": "Phone number",
+        "emails": "Emails",
+        "email": "Email",
+        "references": "References",
+        "name": "Name",
+        "max-characters": "{{charNumber}} Characters maximum"
+    }
+}

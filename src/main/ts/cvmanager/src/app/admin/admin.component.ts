@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'admin-root',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AdminComponent implements OnInit {
-    constructor() { }
+    constructor(
+        private router: Router
+    ) { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        if(this.router.url === '/admin') {
+            setTimeout(() => {
+                this.router.navigate(['/admin/dashboard']);
+            }, 1500);
+        }
+    }
 }

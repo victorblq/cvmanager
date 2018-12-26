@@ -1,0 +1,156 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">{{'personal-info.edit-profile' | translate}}</h4>
+                        <p class="card-category">{{'personal-info.edit-your-info' | translate}}</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput name="title" #title placeholder="{{'personal-info.title' | translate}}" 
+                                            [(ngModel)]="personalInfo.title" required maxlength="30">
+                                        <mat-hint align="end">{{title.value?.length || 0}}/30</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput name="subtitle" #subtitle placeholder="{{'personal-info.subtitle' | translate}}" 
+                                            style="text-transform:uppercase" [(ngModel)]="personalInfo.subtitle" maxlength="50">
+                                        <mat-hint align="end">{{subtitle.value?.length || 0}}/50</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput name="firstName" #firstName placeholder="{{'personal-info.first-name' | translate}}" type="text" 
+                                            [(ngModel)]="personalInfo.firstName" maxlength="100" required>
+                                        <mat-hint align="end">{{firstName.value?.length || 0}}/100</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput name="lastName" #lastName placeholder="{{'personal-info.last-name' | translate}}" type="text"
+                                            [(ngModel)]="personalInfo.lastName" maxlength="100">
+                                        <mat-hint align="end">{{lastName.value?.length || 0}}/100</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field>
+                                        <textarea matInput placeholder="{{'personal-info.about-me' | translate}}" 
+                                            name="about-me" [(ngModel)]="personalInfo.aboutMe"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>{{'personal-info.contact' | translate}}</h4>
+                            <h5>{{'personal-info.phones' | translate}}</h5>
+                            <div class="row">
+                                <div class="col-md-4" *ngFor="let phone of personalInfo.phones; let i = index">
+                                    <mat-form-field>
+                                        <input matInput placeholder="{{'personal-info.phone-number' | translate}}" 
+                                            [(ngModel)]="personalInfo.phones[i].number" [ngModelOptions]="{standalone: true}" type="text" maxlength="30">
+                                        <mat-icon matSuffix (click)="removePhone(phone)">clear</mat-icon>
+                                        <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 30} }}</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <button mat-icon-button class="btn btn-primary" (click)="addPhone()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <h5>{{'personal-info.emails' | translate}}</h5>
+                            <div class="row">
+                                <div class="col-md-4" *ngFor="let email of personalInfo.emails; let i = index">
+                                    <mat-form-field>
+                                        <input matInput placeholder="{{'personal-info.email' | translate}}" [(ngModel)]="personalInfo.emails[i].number" 
+                                            [ngModelOptions]="{standalone: true}" type="text" maxlength="50">
+                                        <mat-icon matSuffix (click)="removeEmail(email)">clear</mat-icon>
+                                        <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 50} }}</mat-hint>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button mat-icon-button class="btn btn-primary" (click)="addEmail()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <h5>{{'personal-info.references' | translate}}</h5>
+                            <div class="row">
+                                <div class="col-md-12" *ngFor="let reference of personalInfo.references; let i = index">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <mat-form-field>
+                                                <input matInput placeholder="{{'personal-info.name' | translate}}" 
+                                                    [(ngModel)]="personalInfo.references[i].name" [ngModelOptions]="{standalone: true}" 
+                                                    type="text" maxlength="100">
+                                                    <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 100} }}</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <mat-form-field>
+                                                <input matInput placeholder="{{'personal-info.contact' | translate}}" 
+                                                    [(ngModel)]="personalInfo.references[i].contact" [ngModelOptions]="{standalone: true}" 
+                                                    type="text" maxlength="50">
+                                                <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 50} }}</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button mat-icon-button class="btn btn-danger" (click)="removeReference(reference)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <button mat-icon-button class="btn btn-primary" (click)="addReference()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button mat-raised-button class="btn btn-primary pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <img class="img" src="./assets/img/faces/marc.jpg" />
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="card-category text-gray">{{personalInfo.title}}</h3>
+                        <h6 class="card-category text-gray">{{personalInfo.subtitle}}</h6>
+
+                        <p class="card-description">
+                            {{personalInfo.aboutMe}}
+                        </p>
+                        
+                        <button class="btn btn-primary btn-round" (click)="inputFile.click()">Change image</button>
+                        <p>{{imagePath}}</p>
+                        <input hidden type="file" #inputFile id="profile_image" name="profile_image" (change)="previewImage($event)" accept=".jpg,.png,.jpeg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

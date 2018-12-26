@@ -10,8 +10,12 @@ spring:
   #JPA
   jpa:
     hibernate.ddl-auto: update
-    show-sql: false
-
+    show-sql: true
+  
+  #FLYWAY
+  flyway:
+    enabled: false
+    
   #DATA SOURCE
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/${spring.application.name}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -8,31 +9,35 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: 'dashboard', title: 'dashboard', icon: 'dashboard', class: '' },
+    { path: 'personal-info', title: 'personal-info.personal-info', icon: 'person', class: '' },
+    { path: 'graduation', title: 'graduation', icon: 'school', class: '' },
+    { path: 'professional-experience', title: 'professional-experience', icon: 'work', class: '' },
+    { path: 'qualifications', title: 'qualifications', icon: 'trending_up', class: '' },
+    { path: 'projects', title: 'projects', icon: 'build', class: '' },
+    { path: 'extra-activities', title: 'extra-activities', icon: 'library_books', class: '' },
 ];
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any[];
+    menuItems: any[];
 
-  constructor() { }
+    constructor(
+        private router: Router
+    ) { }
 
-  ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
-  }
-  isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
-  };
+    ngOnInit() {
+        this.menuItems = ROUTES.filter(menuItem => menuItem);
+    }
+
+    isMobileMenu() {
+        if ($(window).width() > 991) {
+            return false;
+        }
+        return true;
+    };
 }

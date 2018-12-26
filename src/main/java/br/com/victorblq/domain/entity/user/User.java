@@ -18,6 +18,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * @author Victor Carvalho
+ *
+ * @version 1.0.0
+ * @since 1.0.0, 12/19/2018
+ */
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = true)

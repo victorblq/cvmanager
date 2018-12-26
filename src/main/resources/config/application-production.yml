@@ -1,0 +1,22 @@
+#SETTINGS
+app:
+  external-url: http://localhost:8080
+
+#SPRING
+spring:
+  application:
+    version: ${spring.application.name}-RELEASE
+  
+  #JPA
+  jpa:
+    hibernate.ddl-auto: validate
+    show-sql: false
+    
+  #FLYWAY
+  flyway:
+    enabled: true
+    check-location: true
+    schemas: public
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    sql-migration-prefix: v  

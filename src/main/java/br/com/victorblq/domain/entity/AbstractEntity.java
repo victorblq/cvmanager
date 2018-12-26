@@ -17,6 +17,13 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * @author Victor Carvalho
+ *
+ * @version 1.0.0
+ * @since 1.0.0, 12/19/2018
+ */
 @Data
 @NoArgsConstructor
 @MappedSuperclass
