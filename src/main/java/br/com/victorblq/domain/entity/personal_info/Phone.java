@@ -2,7 +2,12 @@ package br.com.victorblq.domain.entity.personal_info;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.victorblq.domain.entity.AbstractEntity;
 import lombok.Data;
@@ -27,4 +32,9 @@ public class Phone extends AbstractEntity{
 	@NotEmpty
 	@Column(length=30)
 	private String number;
+	
+	@NotNull
+	@JsonIgnore
+	@ManyToOne(optional=false, fetch=FetchType.LAZY)
+	private PersonalInfo personalInfo;
 }

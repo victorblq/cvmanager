@@ -15,8 +15,3 @@ spring:
   #FLYWAY
   flyway:
     enabled: true
-    check-location: true
-    schemas: public
-    locations: classpath:db/migration
-    baseline-on-migrate: true
-    sql-migration-prefix: v  

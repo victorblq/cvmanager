@@ -50,46 +50,92 @@
                                 </div>
                             </div>
 
+                            <button mat-raised-button class="btn btn-primary pull-right" (click)="updatePersonalInfo()">Update Profile</button>
+                            <div class="clearfix"></div>
+
                             <hr>
 
-                            <h4>{{'personal-info.contact' | translate}}</h4>
-                            <h5>{{'personal-info.phones' | translate}}</h5>
                             <div class="row">
-                                <div class="col-md-4" *ngFor="let phone of personalInfo.phones; let i = index">
-                                    <mat-form-field>
-                                        <input matInput placeholder="{{'personal-info.phone-number' | translate}}" 
-                                            [(ngModel)]="personalInfo.phones[i].number" [ngModelOptions]="{standalone: true}" type="text" maxlength="30">
-                                        <mat-icon matSuffix (click)="removePhone(phone)">clear</mat-icon>
-                                        <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 30} }}</mat-hint>
-                                    </mat-form-field>
+                                <div class="col-md-11">
+                                    <h5>{{'personal-info.phones' | translate}}</h5>
                                 </div>
-                                
-                                <div class="col-md-4">
+                                <div class="col-md-1">
                                     <button mat-icon-button class="btn btn-primary" (click)="addPhone()">
                                         <mat-icon>add</mat-icon>
                                     </button>
                                 </div>
                             </div>
-                            
-                            <h5>{{'personal-info.emails' | translate}}</h5>
                             <div class="row">
-                                <div class="col-md-4" *ngFor="let email of personalInfo.emails; let i = index">
-                                    <mat-form-field>
-                                        <input matInput placeholder="{{'personal-info.email' | translate}}" [(ngModel)]="personalInfo.emails[i].number" 
-                                            [ngModelOptions]="{standalone: true}" type="text" maxlength="50">
-                                        <mat-icon matSuffix (click)="removeEmail(email)">clear</mat-icon>
-                                        <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 50} }}</mat-hint>
-                                    </mat-form-field>
+                                <div class="col-md-4" *ngFor="let phone of personalInfo.phones; let i = index">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <mat-form-field>
+                                                <input matInput placeholder="{{'personal-info.phone-number' | translate}}" 
+                                                    [(ngModel)]="personalInfo.phones[i].number" [ngModelOptions]="{standalone: true}" 
+                                                    type="text" maxlength="30">
+                                                <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 30} }}</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button mat-icon-button class="btn btn-success" *ngIf="phone.id == null" (click)="savePhone(phone)">
+                                                <mat-icon>check</mat-icon>
+                                            </button>
+                                            <button mat-icon-button class="btn btn-danger" (click)="removePhone(phone)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            
+                            <hr>
 
-                                <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <h5>{{'personal-info.emails' | translate}}</h5>
+                                </div>
+                                <div class="col-md-1">
                                     <button mat-icon-button class="btn btn-primary" (click)="addEmail()">
                                         <mat-icon>add</mat-icon>
                                     </button>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-4" *ngFor="let email of personalInfo.emails; let i = index">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <mat-form-field>
+                                                <input matInput placeholder="{{'personal-info.email' | translate}}" 
+                                                    [(ngModel)]="personalInfo.emails[i].address" [ngModelOptions]="{standalone: true}" 
+                                                    type="email" maxlength="50">
+                                                <mat-icon matSuffix (click)="removeEmail(email)">clear</mat-icon>
+                                                <mat-hint align="end">{{ 'personal-info.max-characters' | translate:{charNumber: 50} }}</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button mat-icon-button class="btn btn-success" *ngIf="email.id == null" (click)="saveEmail(email)">
+                                                <mat-icon>check</mat-icon>
+                                            </button>
+                                            <button mat-icon-button class="btn btn-danger" (click)="removeEmail(email)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <h5>{{'personal-info.references' | translate}}</h5>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <h5>{{'personal-info.references' | translate}}</h5>
+                                </div>
+                                <div class="col-md-1">
+                                    <button mat-icon-button class="btn btn-primary" (click)="addReference()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12" *ngFor="let reference of personalInfo.references; let i = index">
                                     <div class="row">
@@ -110,22 +156,16 @@
                                             </mat-form-field>
                                         </div>
                                         <div class="col-md-2">
+                                            <button mat-icon-button *ngIf="reference.id == null" class="btn btn-success" (click)="saveReference(reference)">
+                                                <mat-icon>check</mat-icon>
+                                            </button>
                                             <button mat-icon-button class="btn btn-danger" (click)="removeReference(reference)">
                                                 <mat-icon>delete</mat-icon>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-md-12">
-                                    <button mat-icon-button class="btn btn-primary" (click)="addReference()">
-                                        <mat-icon>add</mat-icon>
-                                    </button>
-                                </div>
                             </div>
-
-                            <button mat-raised-button class="btn btn-primary pull-right">Update Profile</button>
-                            <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
@@ -134,7 +174,7 @@
             <div class="col-md-4">
                 <div class="card card-profile">
                     <div class="card-avatar">
-                        <img class="img" src="./assets/img/faces/marc.jpg" />
+                        <img class="img" src="{{personalInfo.image}}" style="min-height: 130px"/>
                     </div>
 
                     <div class="card-body">
@@ -146,7 +186,17 @@
                         </p>
                         
                         <button class="btn btn-primary btn-round" (click)="inputFile.click()">Change image</button>
-                        <p>{{imagePath}}</p>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <span>{{imagePath}}</span>
+                            </div>
+                            <div class="col-md-2">
+                                <button mat-icon-button *ngIf="imagePath != null" class="btn btn-success" (click)="updateImage(inputFile)">
+                                    <mat-icon>check</mat-icon>
+                                </button>
+                            </div>
+                        </div>
                         <input hidden type="file" #inputFile id="profile_image" name="profile_image" (change)="previewImage($event)" accept=".jpg,.png,.jpeg">
                     </div>
                 </div>

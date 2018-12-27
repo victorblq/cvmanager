@@ -1,7 +1,17 @@
 package br.com.victorblq;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
+
+import br.com.victorblq.domain.service.UploadService;
 
 /**
  * 
@@ -11,10 +21,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 1.0.0, 12/19/2018
  */
 @SpringBootApplication
-public class CvmanagerApplication {
+@PropertySource("classpath:/config/application.yml")
+public class CvmanagerApplication implements CommandLineRunner{
+	
+	@Value("${upload.paths.image}")
+	private String imageUploadPath;
+	
+	@Resource
+	UploadService uploadService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CvmanagerApplication.class, args);
 	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Path imgPath = Paths.get(this.imageUploadPath);
+		
+		this.uploadService.initImageDir(imgPath);		
+	}
+	
 
 }

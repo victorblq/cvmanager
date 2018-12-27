@@ -20,6 +20,7 @@ import { PersonalInfoComponent } from './admin/personal-info/personal-info.compo
 import { AdminHomeComponent } from './admin/home/admin-home.component';
 import { GraduationComponent } from './admin/graduation/graduation.component';
 import { UserMenuComponent } from './admin/components/navbar/user-menu/user-menu.component';
+import { PersonalInfoService } from './services/personal-info.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -55,7 +56,9 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    providers: [],
+    providers: [
+        PersonalInfoService
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]
 })

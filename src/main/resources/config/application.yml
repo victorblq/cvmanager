@@ -5,12 +5,12 @@ spring:
     
   #FLYWAY
   flyway:
-    enabled: true
     check-location: true
     schemas: public
     locations: classpath:db/migration
     baseline-on-migrate: true
-    
+    sql-migration-prefix: v  
+      
   #JPA
   jpa:
     open-in-view: false
@@ -32,3 +32,10 @@ spring:
     prefix: classpath:/static/
     suffix: .html
 
+  http:
+    multipart:
+      max-file-size: 8MB
+      
+upload:
+  paths: 
+    image: uploads/img
