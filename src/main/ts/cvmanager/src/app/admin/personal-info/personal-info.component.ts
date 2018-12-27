@@ -1,21 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PersonalInfo } from '../../entity/personal-info';
 import { Phone } from '../../entity/phone';
 import { Email } from '../../entity/email';
 import { Reference } from '../../entity/reference';
 import { PersonalInfoService } from '../../services/personal-info.service';
-import { MatInput } from '@angular/material';
 
 @Component({
     selector: 'personal-info',
     templateUrl: 'personal-info.component.html'
 })
 export class PersonalInfoComponent implements OnInit {
-
-    private imagePath: string;
-    @ViewChild("inputFile") inputFile: MatInput;
-
-    private personalInfo: PersonalInfo = new PersonalInfo();
+    
+    @ViewChild("inputFile") 
+    inputFile: ElementRef;
+    
+    public personalInfo: PersonalInfo = new PersonalInfo();
+    public imagePath: string;
 
     constructor(
         private personalInfoService: PersonalInfoService
@@ -138,7 +138,8 @@ export class PersonalInfoComponent implements OnInit {
 
         this.personalInfoService.updateImage(formData).then( (result) => {
             this.personalInfo = result;
-            this.inputFile.value = null;
+            this.inputFile.nativeElement.value = "";
+            this.imagePath = null;
         });
     }
 }

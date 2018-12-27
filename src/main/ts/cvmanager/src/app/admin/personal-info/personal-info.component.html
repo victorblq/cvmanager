@@ -187,7 +187,7 @@
                         
                         <button class="btn btn-primary btn-round" (click)="inputFile.click()">Change image</button>
 
-                        <div class="row">
+                        <div class="row" *ngIf="imagePath != null">
                             <div class="col-md-10">
                                 <span>{{imagePath}}</span>
                             </div>
