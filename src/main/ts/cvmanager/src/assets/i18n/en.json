@@ -49,6 +49,13 @@
         "status": "Status",
         "period": "Period",
         "actions": "Actions",
-        "FINISHED": "Finished"
+        "FINISHED": "Finished",
+        "IN_PROGRESS": "In progress",
+        "add-graduation": "Add graduation",
+        "edit-graduation": "Edit graduation",
+        "save": "Save",
+        "cancel": "Cancel",
+        "fill-required-fields": "Please, fill all the required fields",
+        "graduation-saved": "Graduation saved"
     }
 }

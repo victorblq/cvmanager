@@ -27,5 +27,9 @@ public class GraduationService {
 	public List<Graduation> listGraduations() {
 		return this.graduationRepository.findAll();
 	}
+
+	public Graduation insertGraduation(Graduation graduation) {
+		return this.graduationRepository.save(graduation);
+	}
 	
 }

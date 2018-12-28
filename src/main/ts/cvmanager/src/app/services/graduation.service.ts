@@ -15,4 +15,11 @@ export class GraduationService {
         return this.http.get<Array<Graduation>>(this.url).toPromise<Array<Graduation>>();
     }
 
+    public listGraduationStatus(): Promise<Array<string>>{
+        return this.http.get<Array<string>>(`${this.url}/graduation_status`).toPromise<Array<string>>();
+    }
+
+    public insertGraduation(graduation: Graduation): Promise<Graduation>{
+        return this.http.post<Graduation>(this.url, graduation).toPromise<Graduation>();
+    }
 }

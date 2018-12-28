@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MatInputModule, MatIconModule, MatButtonModule } from "@angular/material";
+import { MatInputModule, MatIconModule, MatButtonModule, MatDialog, MatDialogModule, MatSelectModule } from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { UserMenuComponent } from './admin/components/navbar/user-menu/user-menu
 import { PersonalInfoService } from './services/personal-info.service';
 import { GraduationService } from './services/graduation.service';
 import { NotificationService } from './services/notification.service';
+import { GraduationFormComponent } from './admin/graduation/form/graduation-form.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         NavbarComponent,
         SidebarComponent,
         PersonalInfoComponent,
-        GraduationComponent
+        GraduationComponent,
+        GraduationFormComponent
     ],
     imports: [
         BrowserModule,
@@ -47,7 +49,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         FormsModule,
         MatInputModule,
         MatIconModule,
+        MatDialogModule,
         MatButtonModule,
+        MatSelectModule,
         HttpClientModule,
         TranslateModule.forRoot({
             loader: {
@@ -61,6 +65,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         PersonalInfoService,
         GraduationService,
         NotificationService
+    ],
+    entryComponents:[
+        GraduationFormComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

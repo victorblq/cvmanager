@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-header card-header-warning">
+        <h4>{{title}}</h4>
+    </div>
+    <div class="card-body">
+        <form #form>
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field>
+                        <input matInput #course placeholder="{{'graduation.course' | translate}}" type="text" name="course" 
+                            [(ngModel)]="graduation.course" maxlength="100" required>
+                        <mat-hint align="end">{{course.value?.length || 0}}/100</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field>
+                        <input matInput #institute placeholder="{{'graduation.institute' | translate}}" type="text" name="institute" 
+                            [(ngModel)]="graduation.institute" maxlength="100" required>
+                        <mat-hint align="end">{{institute.value?.length || 0}}/100</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <input matInput #titleField placeholder="{{'graduation.title' | translate}}" type="text" name="title" 
+                            [(ngModel)]="graduation.title" maxlength="50">
+                        <mat-hint align="end">{{titleField.value?.length || 0}}/50</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <mat-select name="status" [(ngModel)]="graduation.status" placeholder="{{'graduation.status' | translate}}" required>
+                            <mat-option *ngFor="let status of graduationStatus" [value]="status">{{'graduation.'+status | translate}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field>
+                        <input matInput #period placeholder="{{'graduation.period' | translate}}" type="text" name="period" 
+                            [(ngModel)]="graduation.period" maxlength="10">
+                        <mat-hint align="end">{{period.value?.length || 0}}/10</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer pull-right">
+        <button mat-button (click)="close(null, null)">{{'graduation.cancel' | translate}}</button>
+        <button mat-raised-button class="btn btn-success" (click)="close(form, graduation)">{{'graduation.save' | translate}}</button>
+    </div>
+</div>

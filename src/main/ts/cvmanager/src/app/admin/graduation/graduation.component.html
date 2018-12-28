@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-primary">
                         <h4 class="card-title">{{'graduation.graduation-list' | translate}}</h4>
-                        <button mat-icon-button class="pull-right btn btn-warning"><mat-icon>add</mat-icon></button>
+                        <button mat-icon-button class="pull-right btn btn-warning" (click)="openGraduationForm(null)"><mat-icon>add</mat-icon></button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -26,7 +26,11 @@
                                         <td>{{graduation.title}}</td>
                                         <td>{{'graduation.'+graduation.status | translate}}</td>
                                         <td>{{graduation.period}}</td>
-                                        <td>{{graduation.actions}}</td>
+                                        <td>
+                                            <button mat-icon-button class="btn btn-warning" (click)="openGraduationForm(graduation)">
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
