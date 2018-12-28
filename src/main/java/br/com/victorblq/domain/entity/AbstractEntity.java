@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
  * @author Victor Carvalho
  *
  * @version 1.0.0
- * @since 1.0.0, 12/19/2018
+ * @since 1.0.0, Dec 19, 2018
  */
 @Data
 @NoArgsConstructor

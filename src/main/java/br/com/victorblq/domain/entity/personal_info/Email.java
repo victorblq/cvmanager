@@ -29,7 +29,7 @@ public class Email extends AbstractEntity{
 	private static final long serialVersionUID = -1203485418453920742L;
 
 	@NotEmpty
-	@Column(length=50)
+	@Column(length=50, nullable=false)
 	private String address;
 	
 	@NotNull

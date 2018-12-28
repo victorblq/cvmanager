@@ -29,10 +29,10 @@ public class Reference extends AbstractEntity{
 	private static final long serialVersionUID = -4937394536561912792L;
 	
 	@NotEmpty
-	@Column(length=100)
+	@Column(length=100, nullable=false)
 	private String name;
 	@NotEmpty
-	@Column(length=50)
+	@Column(length=50, nullable=false)
 	private String contact;
 	@NotNull
 	@JsonIgnore

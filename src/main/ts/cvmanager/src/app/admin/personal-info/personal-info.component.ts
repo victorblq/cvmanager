@@ -7,6 +7,7 @@ import { PersonalInfoService } from '../../services/personal-info.service';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { TranslateService } from '@ngx-translate/core';
 import { AdminComponent } from '../admin.component';
+import { NotificationService } from '../../services/notification.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class PersonalInfoComponent implements OnInit {
     constructor(
         private personalInfoService: PersonalInfoService,
         private translateService: TranslateService,
-        public adminComponent: AdminComponent
+        public adminComponent: AdminComponent,
+        private notificationService: NotificationService
     ) { 
         translateService.get('personal-info.page-title').subscribe((pageTitle) => {
             adminComponent.pageTitle = pageTitle;
@@ -64,7 +66,16 @@ export class PersonalInfoComponent implements OnInit {
         this.personalInfoService.savePhone(phone)
         .then((result: PersonalInfo) => {
             this.personalInfo = result;
+
+            this.translateService.get('personal-info.phone-saved').subscribe((phoneSavedText) => {
+                this.notificationService.showNotification('top', 'right', 'success', phoneSavedText);
+            });
         })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 
     removePhone(phone){
@@ -94,7 +105,16 @@ export class PersonalInfoComponent implements OnInit {
         this.personalInfoService.saveEmail(email)
         .then((result: PersonalInfo) => {
             this.personalInfo = result;
+
+            this.translateService.get('personal-info.email-saved').subscribe((emailSavedText) => {
+                this.notificationService.showNotification('top', 'right', 'success', emailSavedText);
+            });
         })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 
     removeEmail(email){
@@ -124,7 +144,16 @@ export class PersonalInfoComponent implements OnInit {
         this.personalInfoService.saveReference(reference)
         .then((result: PersonalInfo) => {
             this.personalInfo = result;
+            
+            this.translateService.get('personal-info.reference-saved').subscribe((referenceSavedText) => {
+                this.notificationService.showNotification('top', 'right', 'success', referenceSavedText);
+            });
         })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 
     removeReference(reference){
@@ -147,6 +176,10 @@ export class PersonalInfoComponent implements OnInit {
         formData.append('image', input.files[0]);
 
         this.personalInfoService.updateImage(formData).then( (result) => {
+            this.translateService.get('personal-info.image-updated').subscribe((imageUpdatedText) => {
+                this.notificationService.showNotification('top', 'right', 'success', imageUpdatedText);
+            });
+            
             this.personalInfo = result;
             this.inputFile.nativeElement.value = "";
             this.imagePath = null;

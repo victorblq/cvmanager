@@ -31,8 +31,6 @@ public class PersonalInfo extends AbstractEntity{
 
 	private static final long serialVersionUID = -5614379199994541271L;
 	
-	@Column(columnDefinition="TEXT")
-	private String image;
 	@NotEmpty
 	@Column(length=30, nullable=false)
 	private String title;
@@ -45,6 +43,8 @@ public class PersonalInfo extends AbstractEntity{
 	private String lastName;
 	@Column(columnDefinition="TEXT")
 	private String aboutMe;
+	@Column(columnDefinition="TEXT")
+	private String image;
 	@OneToMany(fetch=FetchType.EAGER, mappedBy="personalInfo")
 	@Fetch(FetchMode.SUBSELECT)
 	private List<Phone> phones;

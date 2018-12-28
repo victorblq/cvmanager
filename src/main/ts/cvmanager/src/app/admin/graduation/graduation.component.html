@@ -1,7 +1,39 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <h1>Graduation</h1>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">{{'graduation.graduation-list' | translate}}</h4>
+                        <button mat-icon-button class="pull-right btn btn-warning"><mat-icon>add</mat-icon></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <th>{{'graduation.course' | translate}}</th>
+                                    <th>{{'graduation.institute' | translate}}</th>
+                                    <th>{{'graduation.title' | translate}}</th>
+                                    <th>{{'graduation.status' | translate}}</th>
+                                    <th>{{'graduation.period' | translate}}</th>
+                                    <th>{{'graduation.actions' | translate}}</th>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let graduation of graduations">
+                                        <td>{{graduation.course}}</td>
+                                        <td>{{graduation.institute}}</td>
+                                        <td>{{graduation.title}}</td>
+                                        <td>{{'graduation.'+graduation.status | translate}}</td>
+                                        <td>{{graduation.period}}</td>
+                                        <td>{{graduation.actions}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

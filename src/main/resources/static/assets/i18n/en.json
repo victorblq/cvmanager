@@ -1,14 +1,18 @@
 {
     "title": "Title",
     "actions": "Actions",
-    "dashboard": "Dashboard",
-    "graduation": "Graduation",
     "professional-experience": "Professional experience",
     "qualifications": "Qualifications",
     "projects": "Projects",
     "extra-activities": "Extra activities",
     
+    "dashboard":{
+        "page-title": "Dashboard",
+        "dashboard": "Dashboard"
+    },
+
     "personal-info": {
+        "page-title": "Personal info",
         "personal-info": "Personal info",
         "edit-profile": "Edit Profile",
         "edit-your-info": "Edit your personal information",
@@ -24,6 +28,13 @@
         "email": "Email",
         "references": "References",
         "name": "Name",
-        "max-characters": "{{charNumber}} Characters maximum"
+        "max-characters": "{{charNumber}} Characters maximum",
+        "change-image": "Change image",
+        "update-profile": "Update profile"
+    },
+
+    "graduation":{
+        "page-title": "Graduation",
+        "graduation": "Graduation"
     }
 }

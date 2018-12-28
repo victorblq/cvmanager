@@ -5,6 +5,7 @@
     "qualifications": "Qualifications",
     "projects": "Projects",
     "extra-activities": "Extra activities",
+    "error": "Error",
     
     "dashboard":{
         "page-title": "Dashboard",
@@ -30,11 +31,24 @@
         "name": "Name",
         "max-characters": "{{charNumber}} Characters maximum",
         "change-image": "Change image",
-        "update-profile": "Update profile"
+        "update-profile": "Update profile",
+        "image-updated": "Image updated",
+        "profile-updated": "Profile updated",
+        "phone-saved": "Phone saved",
+        "email-saved": "Email saved",
+        "reference-saved": "Reference saved"
     },
 
     "graduation":{
         "page-title": "Graduation",
-        "graduation": "Graduation"
+        "graduation": "Graduation",
+        "graduation-list": "List",
+        "course": "Course",
+        "institute": "Institute",
+        "title": "Title",
+        "status": "Status",
+        "period": "Period",
+        "actions": "Actions",
+        "FINISHED": "Finished"
     }
 }

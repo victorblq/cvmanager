@@ -9,7 +9,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { MatInputModule, MatIconModule, MatButtonModule } from "@angular/material";
 
-import * as $ from 'jquery';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './cvmanager/home/home.component';
@@ -21,6 +20,8 @@ import { AdminHomeComponent } from './admin/home/admin-home.component';
 import { GraduationComponent } from './admin/graduation/graduation.component';
 import { UserMenuComponent } from './admin/components/navbar/user-menu/user-menu.component';
 import { PersonalInfoService } from './services/personal-info.service';
+import { GraduationService } from './services/graduation.service';
+import { NotificationService } from './services/notification.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -57,7 +58,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         })
     ],
     providers: [
-        PersonalInfoService
+        PersonalInfoService,
+        GraduationService,
+        NotificationService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

@@ -30,7 +30,7 @@ public class Phone extends AbstractEntity{
 	private static final long serialVersionUID = -3418205533972060698L;
 	
 	@NotEmpty
-	@Column(length=30)
+	@Column(length=30, nullable=false)
 	private String number;
 	
 	@NotNull
