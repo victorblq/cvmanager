@@ -50,7 +50,7 @@
                                 </div>
                             </div>
 
-                            <button mat-raised-button class="btn btn-primary pull-right" (click)="updatePersonalInfo()">Update Profile</button>
+                            <button mat-raised-button class="btn btn-primary pull-right" (click)="updatePersonalInfo()">{{'personal-info.update-profile' | translate}}</button>
                             <div class="clearfix"></div>
 
                             <hr>
@@ -185,7 +185,7 @@
                             {{personalInfo.aboutMe}}
                         </p>
                         
-                        <button class="btn btn-primary btn-round" (click)="inputFile.click()">Change image</button>
+                        <button class="btn btn-primary btn-round" (click)="inputFile.click()">{{'personal-info.change-image' | translate}}</button>
 
                         <div class="row" *ngIf="imagePath != null">
                             <div class="col-md-10">

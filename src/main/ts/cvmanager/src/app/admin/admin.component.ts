@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
 })
 
 export class AdminComponent implements OnInit {
+    
+    public pageTitle: string;
+
     constructor(
         private router: Router
     ) { }

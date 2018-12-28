@@ -1,9 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ComponentRef } from '@angular/core';
 import { PersonalInfo } from '../../entity/personal-info';
 import { Phone } from '../../entity/phone';
 import { Email } from '../../entity/email';
 import { Reference } from '../../entity/reference';
 import { PersonalInfoService } from '../../services/personal-info.service';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { TranslateService } from '@ngx-translate/core';
+import { AdminComponent } from '../admin.component';
+
 
 @Component({
     selector: 'personal-info',
@@ -18,9 +22,15 @@ export class PersonalInfoComponent implements OnInit {
     public imagePath: string;
 
     constructor(
-        private personalInfoService: PersonalInfoService
-    ) { }
-
+        private personalInfoService: PersonalInfoService,
+        private translateService: TranslateService,
+        public adminComponent: AdminComponent
+    ) { 
+        translateService.get('personal-info.page-title').subscribe((pageTitle) => {
+            adminComponent.pageTitle = pageTitle;
+        });
+    }
+    
     ngOnInit() { 
         this.personalInfoService.getPersonalInfo()
         .then((result: PersonalInfo) => {
