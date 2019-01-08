@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">{{'professional-experience.professional-experience' | translate}}</h4>
+                        <button mat-icon-button class="pull-right btn btn-warning" (click)="openProfessionalExperienceForm(null)"><mat-icon>add</mat-icon></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <th>{{ 'professional-experience.title' | translate }}</th>
+                                    <th>{{ 'professional-experience.role' | translate }}</th>
+                                    <th>{{ 'professional-experience.company' | translate }}</th>
+                                    <th>{{ 'professional-experience.period' | translate }}</th>
+                                    <th>{{ 'professional-experience.actions' | translate }}</th>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let professionalExperience of professionalExperiences">
+                                        <td>{{professionalExperience.title}}</td>
+                                        <td>{{professionalExperience.role}}</td>
+                                        <td>{{professionalExperience.company}}</td>
+                                        <td>{{professionalExperience.startDate | date:'dd/MM/yyyy'}} - 
+                                            {{professionalExperience.endDate | date:'dd/MM/yyyy'}}</td>
+                                        <td>
+                                            <button mat-icon-button class="btn btn-warning" 
+                                                (click)="openProfessionalExperienceForm(professionalExperience)">
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

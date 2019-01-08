@@ -29,13 +29,17 @@ public class Graduation extends AbstractEntity {
 	@NotEmpty
 	@Column(length=100, nullable=false)
 	private String course;
+	
 	@NotEmpty
 	@Column(length=100, nullable=false)
 	private String institute;
+
 	@Column(length=50)
 	private String title;
+	
 	@Enumerated(EnumType.STRING)
 	private GraduationStatus status;
+	
 	@Column(length=10)
 	private String period;
 }

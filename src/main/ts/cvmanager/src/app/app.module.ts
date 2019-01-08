@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MatInputModule, MatIconModule, MatButtonModule, MatDialog, MatDialogModule, MatSelectModule } from "@angular/material";
+import { MatInputModule, MatIconModule, MatButtonModule, MatDialogModule, MatSelectModule, MatNativeDateModule, MatDatepickerModule } from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,9 @@ import { PersonalInfoService } from './services/personal-info.service';
 import { GraduationService } from './services/graduation.service';
 import { NotificationService } from './services/notification.service';
 import { GraduationFormComponent } from './admin/graduation/form/graduation-form.component';
+import { ProfessionalExperienceComponent } from './admin/professional-experience/professional-experience.component';
+import { ProfessionalExeperienceFormComponent } from './admin/professional-experience/form/professional-experience-form.component';
+import { ProfessionalExperienceService } from './services/professional-experience.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -40,7 +43,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         SidebarComponent,
         PersonalInfoComponent,
         GraduationComponent,
-        GraduationFormComponent
+        GraduationFormComponent,
+        ProfessionalExperienceComponent,
+        ProfessionalExeperienceFormComponent
     ],
     imports: [
         BrowserModule,
@@ -49,6 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         FormsModule,
         MatInputModule,
         MatIconModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
         MatDialogModule,
         MatButtonModule,
         MatSelectModule,
@@ -64,10 +71,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     providers: [
         PersonalInfoService,
         GraduationService,
-        NotificationService
+        NotificationService,
+        ProfessionalExperienceService
     ],
     entryComponents:[
-        GraduationFormComponent
+        GraduationFormComponent,
+        ProfessionalExeperienceFormComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

@@ -22,4 +22,8 @@ export class GraduationService {
     public insertGraduation(graduation: Graduation): Promise<Graduation>{
         return this.http.post<Graduation>(this.url, graduation).toPromise<Graduation>();
     }
+
+    public updateGraduation(graduation: Graduation): Promise<Graduation>{
+        return this.http.put<Graduation>(this.url, graduation).toPromise<Graduation>();
+    }
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +39,11 @@ public class GraduationController {
 	@PostMapping
 	public Graduation insertGraduation(@RequestBody Graduation graduation) {
 		return this.graduationService.insertGraduation(graduation);
+	}
+	
+	@PutMapping
+	public Graduation updateGraduation(@RequestBody Graduation graduation) {
+		return this.graduationService.updateGraduation(graduation);
 	}
 	
 	@GetMapping("/graduation_status")

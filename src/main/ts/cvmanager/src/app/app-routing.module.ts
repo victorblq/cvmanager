@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminHomeComponent } from './admin/home/admin-home.component';
 import { PersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { GraduationComponent } from './admin/graduation/graduation.component';
+import { ProfessionalExperienceComponent } from './admin/professional-experience/professional-experience.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,10 @@ const routes: Routes = [
             {
                 path: "graduation",
                 component: GraduationComponent
+            },
+            {
+                path: "professional-experience",
+                component: ProfessionalExperienceComponent
             }
         ]
     }

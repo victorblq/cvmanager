@@ -31,5 +31,9 @@ public class GraduationService {
 	public Graduation insertGraduation(Graduation graduation) {
 		return this.graduationRepository.save(graduation);
 	}
+
+	public Graduation updateGraduation(Graduation graduation) {
+		return this.graduationRepository.save(graduation);
+	}
 	
 }

@@ -1,7 +1,6 @@
 {
     "title": "Title",
     "actions": "Actions",
-    "professional-experience": "Professional experience",
     "qualifications": "Qualifications",
     "projects": "Projects",
     "extra-activities": "Extra activities",
@@ -57,5 +56,22 @@
         "cancel": "Cancel",
         "fill-required-fields": "Please, fill all the required fields",
         "graduation-saved": "Graduation saved"
+    },
+
+    "professional-experience": {
+        "professional-experience": "Professional experience",
+        "title": "Title",
+        "role": "Role",
+        "company": "Company",
+        "period": "Period",
+        "start-date": "Start date",
+        "end-date": "End date",
+        "actions": "Actions",
+        "description": "Description",
+        "edit-professional-experience": "Edit professional experience",
+        "add-professional-experience": "Add professional experience",
+        "cancel": "Cancel",
+        "save": "Save",
+        "professional-experience-saved": "Professional experience saved"
     }
 }

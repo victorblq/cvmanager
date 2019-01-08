@@ -47,7 +47,7 @@ export class GraduationComponent implements OnInit {
         formDialogRef.afterClosed().subscribe((result) => {
             if(result != null){
                 if(result.id != null){
-                    // this.updateGraduation();
+                    this.updateGraduation(result);
                 }else{
                     this.insertGraduation(result);
                 }
@@ -68,6 +68,26 @@ export class GraduationComponent implements OnInit {
             this.translateService.get('error').subscribe((errorText) => {
                 this.notificationService.showNotification('top', 'right', 'danger', errorText);
             });
-        });;
+        });
+    }
+
+    public updateGraduation(graduation){
+        this.graduationService.updateGraduation(graduation)
+        .then((result: Graduation) => {
+            let graduationToRemove = this.graduations.find((graduationToFind) => {
+                return graduationToFind.id == result.id;
+            });
+            
+            this.graduations.splice(this.graduations.indexOf(graduationToRemove), 1, result);
+
+            this.translateService.get('graduation.graduation-saved').subscribe((referenceSavedText) => {
+                this.notificationService.showNotification('top', 'right', 'success', referenceSavedText);
+            });
+        })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 }
