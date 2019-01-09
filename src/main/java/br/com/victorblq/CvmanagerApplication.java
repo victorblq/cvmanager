@@ -27,6 +27,9 @@ public class CvmanagerApplication implements CommandLineRunner{
 	@Value("${upload.paths.image}")
 	private String imageUploadPath;
 	
+	@Value("${upload.paths.projectsImages}")
+	private String projectsImagesPath;
+	
 	@Resource
 	UploadService uploadService;
 
@@ -37,8 +40,12 @@ public class CvmanagerApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Path imgPath = Paths.get(this.imageUploadPath);
+		this.uploadService.initImageDir(imgPath);
 		
-		this.uploadService.initImageDir(imgPath);		
+		Path projectsImagesPath = Paths.get(this.projectsImagesPath);
+		this.uploadService.initImageDir(projectsImagesPath);
+		
+		
 	}
 	
 

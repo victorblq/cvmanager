@@ -26,6 +26,9 @@ import { GraduationFormComponent } from './admin/graduation/form/graduation-form
 import { ProfessionalExperienceComponent } from './admin/professional-experience/professional-experience.component';
 import { ProfessionalExeperienceFormComponent } from './admin/professional-experience/form/professional-experience-form.component';
 import { ProfessionalExperienceService } from './services/professional-experience.service';
+import { ProjectsComponent } from './admin/projects/projects.component';
+import { ProjectsService } from './services/projects.service';
+import { ProjectsFormComponent } from './admin/projects/form/projects-form.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -45,7 +48,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         GraduationComponent,
         GraduationFormComponent,
         ProfessionalExperienceComponent,
-        ProfessionalExeperienceFormComponent
+        ProfessionalExeperienceFormComponent,
+        ProjectsComponent,
+        ProjectsFormComponent
     ],
     imports: [
         BrowserModule,
@@ -72,11 +77,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         PersonalInfoService,
         GraduationService,
         NotificationService,
-        ProfessionalExperienceService
+        ProfessionalExperienceService,
+        ProjectsService
     ],
     entryComponents:[
         GraduationFormComponent,
-        ProfessionalExeperienceFormComponent
+        ProfessionalExeperienceFormComponent,
+        ProjectsFormComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

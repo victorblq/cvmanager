@@ -29,10 +29,15 @@ export class GraduationComponent implements OnInit {
     }
 
     ngOnInit() { 
-        this.graduationService.listGraduations()
+        this.graduationService.list()
         .then((result: Array<Graduation>) => {
             this.graduations = result;
         })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 
     public openGraduationForm(graduation) {
@@ -56,7 +61,7 @@ export class GraduationComponent implements OnInit {
     }
 
     public insertGraduation(graduation){
-        this.graduationService.insertGraduation(graduation)
+        this.graduationService.insert(graduation)
         .then((result: Graduation) => {
             this.graduations.push(graduation);
 
@@ -72,7 +77,7 @@ export class GraduationComponent implements OnInit {
     }
 
     public updateGraduation(graduation){
-        this.graduationService.updateGraduation(graduation)
+        this.graduationService.update(graduation)
         .then((result: Graduation) => {
             let graduationToRemove = this.graduations.find((graduationToFind) => {
                 return graduationToFind.id == result.id;
@@ -83,6 +88,18 @@ export class GraduationComponent implements OnInit {
             this.translateService.get('graduation.graduation-saved').subscribe((referenceSavedText) => {
                 this.notificationService.showNotification('top', 'right', 'success', referenceSavedText);
             });
+        })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
+    }
+
+    public deleteGraduation(graduation){
+        this.graduationService.delete(graduation.id)
+        .then((result) => {
+            this.graduations.splice(this.graduations.indexOf(graduation), 1);
         })
         .catch((error) => {
             this.translateService.get('error').subscribe((errorText) => {

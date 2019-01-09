@@ -7,6 +7,7 @@ import { AdminHomeComponent } from './admin/home/admin-home.component';
 import { PersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { GraduationComponent } from './admin/graduation/graduation.component';
 import { ProfessionalExperienceComponent } from './admin/professional-experience/professional-experience.component';
+import { ProjectsComponent } from './admin/projects/projects.component';
 
 const routes: Routes = [
     {
@@ -34,6 +35,10 @@ const routes: Routes = [
             {
                 path: "professional-experience",
                 component: ProfessionalExperienceComponent
+            },
+            {
+                path: "projects",
+                component: ProjectsComponent
             }
         ]
     }

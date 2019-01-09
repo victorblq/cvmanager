@@ -15,9 +15,13 @@ spring:
   jpa:
     open-in-view: false
     properties:
-      hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
-      hibernate.default_schema: public
-      hibernate.jdbc.lob.non_contextual_creation: true
+      hibernate:
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        default_schema: public
+        jdbc:
+          lob:
+            non_contextual_creation: true
 
   #STATIC RESOURCES
   resources.static-locations: classpath:/static/
@@ -39,3 +43,4 @@ spring:
 upload:
   paths: 
     image: uploads/img
+    projectsImages: uploads/projects/img

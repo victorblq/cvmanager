@@ -1,10 +1,9 @@
 {
     "title": "Title",
     "actions": "Actions",
-    "qualifications": "Qualifications",
-    "projects": "Projects",
     "extra-activities": "Extra activities",
     "error": "Error",
+    "fill-required-fields": "Please, fill all the required fields",
     
     "dashboard":{
         "page-title": "Dashboard",
@@ -54,7 +53,6 @@
         "edit-graduation": "Edit graduation",
         "save": "Save",
         "cancel": "Cancel",
-        "fill-required-fields": "Please, fill all the required fields",
         "graduation-saved": "Graduation saved"
     },
 
@@ -73,5 +71,20 @@
         "cancel": "Cancel",
         "save": "Save",
         "professional-experience-saved": "Professional experience saved"
+    },
+
+    "projects": {
+        "projects": "Projects",
+        "title": "Title",
+        "start-date": "Start date",
+        "end-date": "End date",
+        "actions": "Actions",
+        "description": "Description",
+        "link": "Link",
+        "cancel": "Cancel",
+        "save": "Save",
+        "project-saved": "Project saved",
+        "edit-project": "Edit project",
+        "add-project": "Add project"
     }
 }

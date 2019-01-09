@@ -1,25 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProfessionalExperience } from '../entity/professional-experience';
+import { AbstractService } from './abstract.service';
 
 @Injectable()
-export class ProfessionalExperienceService {
-
-    private url = "professional_experience";
+export class ProfessionalExperienceService extends AbstractService<ProfessionalExperience>{
 
     constructor(
-        private http: HttpClient
-    ) { }
-
-    public listProfessionalExperience(): Promise<Array<ProfessionalExperience>>{
-        return this.http.get<Array<ProfessionalExperience>>(this.url).toPromise<Array<ProfessionalExperience>>();
-    }
-
-    public insertProfessionalExperience(professionalExperience: ProfessionalExperience): Promise<ProfessionalExperience>{
-        return this.http.post<ProfessionalExperience>(this.url, professionalExperience).toPromise<ProfessionalExperience>();
-    }
-
-    public updateProfessionalExperience(professionalExperience: ProfessionalExperience): Promise<ProfessionalExperience>{
-        return this.http.put<ProfessionalExperience>(this.url, professionalExperience).toPromise<ProfessionalExperience>();
+        public http: HttpClient
+    ) { 
+        super(http);
+        this.url = "professional_experience";
     }
 }

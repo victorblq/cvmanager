@@ -29,10 +29,15 @@ export class ProfessionalExperienceComponent implements OnInit {
     }
 
     ngOnInit() { 
-        this.professionalExperienceService.listProfessionalExperience()
+        this.professionalExperienceService.list()
         .then((result: Array<ProfessionalExperience>) => {
             this.professionalExperiences = result;
         })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
     }
 
     public openProfessionalExperienceForm(professionalExperience) {
@@ -56,7 +61,7 @@ export class ProfessionalExperienceComponent implements OnInit {
     }
 
     public insertProfessionalExperience(professionalExperience){
-        this.professionalExperienceService.insertProfessionalExperience(professionalExperience)
+        this.professionalExperienceService.insert(professionalExperience)
         .then((result: ProfessionalExperience) => {
             this.professionalExperiences.push(result);
 
@@ -72,13 +77,29 @@ export class ProfessionalExperienceComponent implements OnInit {
     }
 
     public updateProfessionalExperience(professionalExperience){
-        this.professionalExperienceService.updateProfessionalExperience(professionalExperience)
+        this.professionalExperienceService.update(professionalExperience)
         .then((result: ProfessionalExperience) => {
-            this.professionalExperiences.push(result);
+            let professionalExperienceToRemove = this.professionalExperiences.find((graduationToFind) => {
+                return graduationToFind.id == result.id;
+            });
+            
+            this.professionalExperiences.splice(this.professionalExperiences.indexOf(professionalExperienceToRemove), 1, result);
 
             this.translateService.get('professional-experience.professional-experience-saved').subscribe((referenceSavedText) => {
                 this.notificationService.showNotification('top', 'right', 'success', referenceSavedText);
             });
+        })
+        .catch((error) => {
+            this.translateService.get('error').subscribe((errorText) => {
+                this.notificationService.showNotification('top', 'right', 'danger', errorText);
+            });
+        });
+    }
+
+    public deleteProfessionalExperience(professionalExperience){
+        this.professionalExperienceService.delete(professionalExperience.id)
+        .then((result) => {
+            this.professionalExperiences.splice(this.professionalExperiences.indexOf(professionalExperience), 1);
         })
         .catch((error) => {
             this.translateService.get('error').subscribe((errorText) => {

@@ -31,4 +31,12 @@ public class ProfessionalExperienceService {
 	public ProfessionalExperience insertProfessionalExperience(ProfessionalExperience professionalExperience) {
 		return this.professionalExperienceRepository.save(professionalExperience);
 	}
+
+	public ProfessionalExperience updateProfessionalExperience(ProfessionalExperience professionalExperience) {
+		return this.professionalExperienceRepository.save(professionalExperience);
+	}
+	
+	public void deleteProfessionalExperience(Long professionalExperienceId) {
+		this.professionalExperienceRepository.deleteById(professionalExperienceId);
+	}
 }

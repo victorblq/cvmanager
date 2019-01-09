@@ -22,7 +22,7 @@ export class GraduationFormComponent implements OnInit {
         private graduationService: GraduationService,
         private notificationService: NotificationService
     ) { 
-        if(data.graduation != null){
+        if(data.graduation.id != null){
             this.graduation = data.graduation;
             this.translateService.get('graduation.edit-graduation').subscribe((editGraduationText) => {
                 this.title = editGraduationText;
@@ -47,7 +47,7 @@ export class GraduationFormComponent implements OnInit {
             if(form.checkValidity()){
                 this.dialogRef.close(response);
             }else{
-                this.translateService.get('graduation.fill-required-fields').subscribe((errorText) => {
+                this.translateService.get('fill-required-fields').subscribe((errorText) => {
                     this.notificationService.showNotification('top', 'right', 'danger', errorText);
                 });
             }

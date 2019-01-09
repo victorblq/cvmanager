@@ -20,8 +20,7 @@ export class ProfessionalExeperienceFormComponent implements OnInit {
         private translateService: TranslateService,
         private notificationService: NotificationService
     ) { 
-        console.log(this.data);
-        if(data.professionalExperience != null){
+        if(data.professionalExperience.id != null){
             this.professionalExperience = data.professionalExperience;
             this.translateService.get('professional-experience.edit-professional-experience').subscribe((editProfessionalExperienceText) => {
                 this.titleText = editProfessionalExperienceText;
@@ -41,7 +40,7 @@ export class ProfessionalExeperienceFormComponent implements OnInit {
             if(form.checkValidity()){
                 this.dialogRef.close(response);
             }else{
-                this.translateService.get('graduation.fill-required-fields').subscribe((errorText) => {
+                this.translateService.get('fill-required-fields').subscribe((errorText) => {
                     this.notificationService.showNotification('top', 'right', 'danger', errorText);
                 });
             }

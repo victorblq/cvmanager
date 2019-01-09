@@ -1,4 +1,6 @@
-export class ProfessionalExperience{
+import { AbstractEntity } from './abstract-entity';
+
+export class ProfessionalExperience extends AbstractEntity{
     title: string;
     role: string;
     description: string;

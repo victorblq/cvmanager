@@ -35,5 +35,9 @@ public class GraduationService {
 	public Graduation updateGraduation(Graduation graduation) {
 		return this.graduationRepository.save(graduation);
 	}
+
+	public void deleteGraduation(Long graduationId) {
+		this.graduationRepository.deleteById(graduationId);
+	}
 	
 }

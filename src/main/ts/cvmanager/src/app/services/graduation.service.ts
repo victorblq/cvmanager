@@ -1,29 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Graduation } from '../entity/graduation';
+import { AbstractService } from './abstract.service';
 
 @Injectable()
-export class GraduationService {
-
-    private url = "graduation";
+export class GraduationService extends AbstractService<Graduation>{
 
     constructor(
-        private http: HttpClient
-    ) { }
-
-    public listGraduations(): Promise<Array<Graduation>>{
-        return this.http.get<Array<Graduation>>(this.url).toPromise<Array<Graduation>>();
+        public http: HttpClient
+    ) { 
+        super(http);
+        this.url = "graduation";
     }
 
     public listGraduationStatus(): Promise<Array<string>>{
         return this.http.get<Array<string>>(`${this.url}/graduation_status`).toPromise<Array<string>>();
-    }
-
-    public insertGraduation(graduation: Graduation): Promise<Graduation>{
-        return this.http.post<Graduation>(this.url, graduation).toPromise<Graduation>();
-    }
-
-    public updateGraduation(graduation: Graduation): Promise<Graduation>{
-        return this.http.put<Graduation>(this.url, graduation).toPromise<Graduation>();
     }
 }

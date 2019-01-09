@@ -10,7 +10,7 @@
                     <mat-form-field>
                         <input matInput #title placeholder="{{'professional-experience.title' | translate}}" type="text" name="title" 
                             [(ngModel)]="professionalExperience.title" maxlength="100" required>
-                        <mat-hint align="end">{{title.value?.length || 0}}/50</mat-hint>
+                        <mat-hint align="end">{{title.value?.length || 0}}/100</mat-hint>
                     </mat-form-field>
                 </div>
 
@@ -18,7 +18,7 @@
                     <mat-form-field>
                         <input matInput #role placeholder="{{'professional-experience.role' | translate}}" type="text" name="role" 
                             [(ngModel)]="professionalExperience.role" maxlength="100" required>
-                        <mat-hint align="end">{{role.value?.length || 0}}/50</mat-hint>
+                        <mat-hint align="end">{{role.value?.length || 0}}/100</mat-hint>
                     </mat-form-field>
                 </div>
             </div>
