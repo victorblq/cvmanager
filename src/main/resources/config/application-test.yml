@@ -9,12 +9,12 @@ spring:
 
   #JPA
   jpa:
-    hibernate.ddl-auto: validate
+    hibernate.ddl-auto: update
     show-sql: true
 
   #FLYWAY
   flyway:
-    enabled: true
+    enabled: false
 
   #DATA SOURCE
   datasource:
