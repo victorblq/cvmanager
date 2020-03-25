@@ -33,6 +33,7 @@ stages:
           - task: Maven@3
             displayName: 'Maven Package'
             inputs:
+              goals: clean package
               options: -Dspring.profiles.active=test
               mavenPomFile: 'pom.xml'
 
