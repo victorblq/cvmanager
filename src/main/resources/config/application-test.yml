@@ -1,6 +1,6 @@
 #SETTINGS
 app:
-  external-url: http://localhost:8080
+  external-url: https://testecvmanager.azurewebsites.net
 
 #SPRING
 spring:

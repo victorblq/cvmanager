@@ -33,7 +33,7 @@ stages:
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
-        jdkVersionOption: "1.10"
+        jdkVersionOption: "1.11"
         options: -P test
         mavenPomFile: 'pom.xml'
 

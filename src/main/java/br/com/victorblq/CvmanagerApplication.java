@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.PropertySource;
 
 import br.com.victorblq.domain.service.UploadService;
@@ -22,7 +24,7 @@ import br.com.victorblq.domain.service.UploadService;
  */
 @SpringBootApplication
 @PropertySource("classpath:/config/application.yml")
-public class CvmanagerApplication implements CommandLineRunner{
+public class CvmanagerApplication extends SpringBootServletInitializer implements CommandLineRunner{
 	
 	@Value("${upload.paths.image}")
 	private String imageUploadPath;
@@ -44,8 +46,11 @@ public class CvmanagerApplication implements CommandLineRunner{
 		
 		Path projectsImagesPath = Paths.get(this.projectsImagesPath);
 		this.uploadService.initImageDir(projectsImagesPath);
-		
-		
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(CvmanagerApplication.class);
 	}
 	
 
