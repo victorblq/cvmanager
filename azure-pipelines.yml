@@ -33,8 +33,9 @@ stages:
           - task: Maven@3
             displayName: 'Maven Package'
             inputs:
-              goals: clean package
-              options: -Dspring.profiles.active=test
+              jdkVersionOption: '1.10'
+              goals: package
+              options: -P test
               mavenPomFile: 'pom.xml'
 
           - task: CopyFiles@2
