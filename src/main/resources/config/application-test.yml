@@ -1,0 +1,23 @@
+#SETTINGS
+app:
+  external-url: http://localhost:8080
+
+#SPRING
+spring:
+  application:
+    version: ${spring.application.name}-BETA
+
+  #JPA
+  jpa:
+    hibernate.ddl-auto: validate
+    show-sql: true
+
+  #FLYWAY
+  flyway:
+    enabled: true
+
+  #DATA SOURCE
+  datasource:
+    url: jdbc:postgresql://otto.db.elephantsql.com:5432/cnbwloce
+    username: cnbwloce
+    password: 342G6Sw0UqmlAQQkgJFR2QDJzQwD5SxC
