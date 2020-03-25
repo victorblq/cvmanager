@@ -6,4 +6,6 @@ export class ProfessionalExperience extends AbstractEntity{
     description: string;
     company: string;
     period: string;
+    startDate: string;
+    endDate: string;
 }
