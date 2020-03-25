@@ -21,3 +21,5 @@ spring:
     url: jdbc:postgresql://otto.db.elephantsql.com:5432/cnbwloce
     username: cnbwloce
     password: 342G6Sw0UqmlAQQkgJFR2QDJzQwD5SxC
+    hikari:
+      maximum-pool-size: 1
