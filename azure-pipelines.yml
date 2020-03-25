@@ -65,7 +65,6 @@ stages:
                 - task: AzureWebApp@1
                   displayName: 'Azure Web App Deploy: testeCVManager'
                   inputs:
-                    startUpCommand: java -jar 
                     azureSubscription: $(azureSubscription)
                     appType: webAppLinux
                     appName: $(webAppName)
