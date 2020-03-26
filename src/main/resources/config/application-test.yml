@@ -1,6 +1,6 @@
 #SETTINGS
 app:
-  external-url: https://testecvmanager.azurewebsites.net
+  external-url: https://testecvmanager.azurewebsites.net/cvmanager-1.0.0-SNAPSHOT/
 
 #SPRING
 spring:
